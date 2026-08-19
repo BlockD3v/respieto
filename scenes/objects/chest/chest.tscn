@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://dll4jiupcynrx"]
+
+[ext_resource type="Script" uid="uid://d0o78wts6ud63" path="res://scenes/objects/chest/chest.gd" id="1_rqprm"]
+[ext_resource type="Texture2D" uid="uid://cajp1x02kfun8" path="res://assets/game/objects/Chest.png" id="1_yv7tv"]
+[ext_resource type="PackedScene" uid="uid://wei3m1ay4vfl" path="res://scenes/components/InteractableComponent.tscn" id="2_vmxm4"]
+[ext_resource type="PackedScene" uid="uid://dfeexbp32itu8" path="res://scenes/objects/chest/feed_component.tscn" id="4_umtkn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmxm4"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pawo"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqprm"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umtkn"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayji6"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44sq4"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrpii"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osdbi"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23oep"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cugcg"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmcsr"]
+atlas = ExtResource("1_yv7tv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wrndj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmxm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pawo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqprm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umtkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayji6")
+}],
+"loop": 0,
+"name": &"chest_close",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44sq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrpii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osdbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23oep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cugcg")
+}],
+"loop": 0,
+"name": &"chest_open",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmcsr")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrndj"]
+size = Vector2(29, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70dkv"]
+size = Vector2(29, 27)
+
+[node name="Chest" type="Node2D" unique_id=719555128]
+script = ExtResource("1_rqprm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=113164514]
+sprite_frames = SubResource("SpriteFrames_wrndj")
+animation = &"chest_close"
+autoplay = "default"
+
+[node name="InteractableComponent" parent="." unique_id=1436372580 instance=ExtResource("2_vmxm4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1850459492]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_wrndj")
+
+[node name="RewardMarker" type="Marker2D" parent="." unique_id=492098118]
+position = Vector2(23.93, 21.91)
+
+[node name="FeedComponent" parent="." unique_id=501055347 instance=ExtResource("4_umtkn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FeedComponent" unique_id=1643761531]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_70dkv")
+debug_color = Color(0.8193193, 0.40417925, 1.92523e-07, 0.41960785)

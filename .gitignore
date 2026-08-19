@@ -1,0 +1,41 @@
+# Godot exported files
+export_build/
+export_presets.cfg
+*.pck
+*.wasm
+*.js
+*.html
+*.worklet.js
+*.png
+*.apple-touch-icon.png
+
+# Godot specific
+*.import
+.godot/
+.import/
+.uid/
+
+# Solana SDK binaries (large, not needed)
+SolanaSDK/bin/
+SolanaSDK/Demos/
+libgodot-solana-sdk.*
+
+# Editor settings
+.vscode/
+.idea/
+*.userprefs
+
+# OS generated
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Backup files
+*~
+*.backup
+*.tmp
+*.tpz
+*.zip
+
+# Addons (if not needed in repo)
+# addons/   # uncomment if you don't want addons in repo

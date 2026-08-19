@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://gjjh4vu2m2jp"]
+
+[ext_resource type="Theme" uid="uid://b5lat772hofnf" path="res://scenes/ui/game_ui_theme.tres" id="1_2yiqu"]
+[ext_resource type="Script" uid="uid://cy0orbxjc80bd" path="res://scenes/ui/tools_panel.gd" id="2_a7ivs"]
+[ext_resource type="Texture2D" uid="uid://05ihwrmv04ks" path="res://scenes/ui/object_sprites.png" id="2_xkgdf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhbk8"]
+atlas = ExtResource("2_xkgdf")
+region = Rect2(32, 0, 18, 18)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xkgdf"]
+load_path = "res://.godot/imported/object_sprites.png-d38628f457ec0eeba0a3ce16753f8cd3.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7ivs"]
+atlas = SubResource("CompressedTexture2D_xkgdf")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0jxvs"]
+load_path = "res://.godot/imported/object_sprites.png-d38628f457ec0eeba0a3ce16753f8cd3.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbtgy"]
+atlas = SubResource("CompressedTexture2D_0jxvs")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a6726"]
+load_path = "res://.godot/imported/object_sprites.png-d38628f457ec0eeba0a3ce16753f8cd3.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3neg6"]
+atlas = SubResource("CompressedTexture2D_a6726")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ur6ba"]
+load_path = "res://.godot/imported/object_sprites.png-d38628f457ec0eeba0a3ce16753f8cd3.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdu3n"]
+atlas = SubResource("CompressedTexture2D_ur6ba")
+region = Rect2(0, 64, 16, 16)
+
+[node name="ToolsPanel" type="PanelContainer" unique_id=894629890]
+offset_right = 46.0
+offset_bottom = 46.0
+theme = ExtResource("1_2yiqu")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_a7ivs")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=480933574]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=147228621]
+layout_mode = 2
+
+[node name="ToolAxe" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1731886435]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_nhbk8")
+icon_alignment = 1
+
+[node name="ToolTilling" type="Button" parent="MarginContainer/HBoxContainer" unique_id=258864569]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_a7ivs")
+icon_alignment = 1
+
+[node name="ToolWateringCan" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1891338661]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_gbtgy")
+icon_alignment = 1
+
+[node name="ToolCorn" type="Button" parent="MarginContainer/HBoxContainer" unique_id=338765015]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_3neg6")
+icon_alignment = 1
+
+[node name="ToolTomato" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1622436516]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_bdu3n")
+icon_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolCorn" to="." method="_on_tool_corn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTomato" to="." method="_on_tool_tomato_pressed"]

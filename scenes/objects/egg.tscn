@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d032e2pnovylx"]
+
+[ext_resource type="Texture2D" uid="uid://u4i6f3hu0sqw" path="res://assets/game/objects/Items/Egg items.png" id="1_h452w"]
+[ext_resource type="PackedScene" uid="uid://dmtjmvxba1xfr" path="res://scenes/components/collectable_component.tscn" id="2_twloa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_70dkv"]
+radius = 7.0
+
+[node name="Egg" type="Sprite2D" unique_id=721697908]
+texture = ExtResource("1_h452w")
+
+[node name="CollectableComponent" parent="." unique_id=636082491 instance=ExtResource("2_twloa")]
+y_sort_enabled = true
+collectable_name = "egg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent" unique_id=95475435]
+shape = SubResource("CircleShape2D_70dkv")

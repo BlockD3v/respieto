@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://burrxn0ty5yu2"]
+
+[ext_resource type="Theme" uid="uid://b5lat772hofnf" path="res://scenes/ui/game_ui_theme.tres" id="1_17uwj"]
+[ext_resource type="Texture2D" uid="uid://05ihwrmv04ks" path="res://scenes/ui/object_sprites.png" id="2_cvy6a"]
+[ext_resource type="Script" uid="uid://cjyeboxm2byxf" path="res://scenes/ui/inventory_panel.gd" id="2_ta3uk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrndj"]
+atlas = ExtResource("2_cvy6a")
+region = Rect2(48, 32, 16, 16)
+margin = Rect2(0.785, 0.295, 1.245, 4.255)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prujj"]
+atlas = ExtResource("2_cvy6a")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63dpd"]
+atlas = ExtResource("2_cvy6a")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro7jp"]
+atlas = ExtResource("2_cvy6a")
+region = Rect2(48, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve1qo"]
+atlas = ExtResource("2_cvy6a")
+region = Rect2(48, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im88q"]
+atlas = ExtResource("2_cvy6a")
+region = Rect2(64, 160, 16, 16)
+
+[node name="InventoryPanel" type="PanelContainer" unique_id=1565861977]
+offset_right = 42.0
+offset_bottom = 51.0
+theme = ExtResource("1_17uwj")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_ta3uk")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1577734363]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.94, 0.94)
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1086242371]
+layout_mode = 2
+
+[node name="Logs" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=2017858591]
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Logs" unique_id=1111502406]
+custom_minimum_size = Vector2(26, 29.8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -3.205)
+texture = SubResource("AtlasTexture_wrndj")
+
+[node name="LogLabel" type="Label" parent="MarginContainer/VBoxContainer/Logs/TextureRect" unique_id=1500275681]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -3.7999992
+offset_right = 7.0
+offset_bottom = 4.200001
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"InventoryLabel"
+text = "0 "
+horizontal_alignment = 1
+
+[node name="Tomato" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=55864795]
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Tomato" unique_id=1055754731]
+custom_minimum_size = Vector2(26, 29.8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -3.205)
+texture = SubResource("AtlasTexture_prujj")
+
+[node name="TomatoLabel" type="Label" parent="MarginContainer/VBoxContainer/Tomato/TextureRect" unique_id=1752475511]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -3.800003
+offset_right = 7.0
+offset_bottom = 4.199997
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"InventoryLabel"
+text = "0"
+horizontal_alignment = 1
+
+[node name="Corn" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1137479663]
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Corn" unique_id=282694222]
+custom_minimum_size = Vector2(26, 29.8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -3.205)
+texture = SubResource("AtlasTexture_63dpd")
+
+[node name="CornLabel" type="Label" parent="MarginContainer/VBoxContainer/Corn/TextureRect" unique_id=1976688912]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -3.800003
+offset_right = 7.0
+offset_bottom = 4.199997
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"InventoryLabel"
+text = "0"
+horizontal_alignment = 1
+
+[node name="Stone" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=284861088]
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Stone" unique_id=1996457125]
+custom_minimum_size = Vector2(26, 29.8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -3.205)
+texture = SubResource("AtlasTexture_ro7jp")
+
+[node name="StoneLabel" type="Label" parent="MarginContainer/VBoxContainer/Stone/TextureRect" unique_id=1682782039]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -2.800003
+offset_right = 7.0
+offset_bottom = 5.199997
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"InventoryLabel"
+text = "0"
+horizontal_alignment = 1
+
+[node name="Egg" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=450969804]
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Egg" unique_id=1808800945]
+custom_minimum_size = Vector2(26, 29.8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -3.205)
+texture = SubResource("AtlasTexture_ve1qo")
+
+[node name="EggLabel" type="Label" parent="MarginContainer/VBoxContainer/Egg/TextureRect" unique_id=2034864133]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -2.800003
+offset_right = 7.0
+offset_bottom = 5.199997
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"InventoryLabel"
+text = "0"
+horizontal_alignment = 1
+
+[node name="Milk" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1270100225]
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Milk" unique_id=470687587]
+custom_minimum_size = Vector2(26, 29.8)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -3.205)
+texture = SubResource("AtlasTexture_im88q")
+
+[node name="MilkLabel" type="Label" parent="MarginContainer/VBoxContainer/Milk/TextureRect" unique_id=638874710]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -2.800003
+offset_right = 7.0
+offset_bottom = 5.199997
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"InventoryLabel"
+text = "0"
+horizontal_alignment = 1

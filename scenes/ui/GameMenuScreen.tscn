@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://c0xs65qdui3uw"]
+
+[ext_resource type="PackedScene" uid="uid://bir0m7dmh3dmy" path="res://scenes/lvl/MainMenuBack.tscn" id="1_keot7"]
+[ext_resource type="Script" uid="uid://do260j46gydke" path="res://scenes/ui/game_menu_screen.gd" id="1_n8g7c"]
+[ext_resource type="Theme" uid="uid://b5lat772hofnf" path="res://scenes/ui/game_ui_theme.tres" id="1_yi7jb"]
+[ext_resource type="PackedScene" uid="uid://bmw1ahykfcltt" path="res://mouse_cursor_component.tscn" id="2_syq4m"]
+[ext_resource type="Texture2D" uid="uid://801f0wa08qgb" path="res://scenes/ui/mouse.png" id="3_a5yrp"]
+[ext_resource type="Script" uid="uid://dyuh6xurvfk7q" path="res://SolanaSDK/Scripts/WalletAdapter/wallet_adapter_button.gd" id="6_a5yrp"]
+
+[node name="GameMenuScreen" type="CanvasLayer" unique_id=136447836]
+script = ExtResource("1_n8g7c")
+
+[node name="MouseCursorComponent" parent="." unique_id=1220619927 instance=ExtResource("2_syq4m")]
+cursor_component_texture = ExtResource("3_a5yrp")
+
+[node name="Lvl1" parent="." unique_id=785842795 instance=ExtResource("1_keot7")]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1703186661]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yi7jb")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1969146501]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer" unique_id=396182355]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_colors/font_shadow_color = Color(0.45882353, 0.29803923, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 54
+text = "RESPIETO"
+
+[node name="Label2" type="Label" parent="MarginContainer/MarginContainer" unique_id=1636676002]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.76862746, 0.6039216, 0.42352942, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 4
+theme_override_font_sizes/font_size = 14
+text = "
+
+
+
+
+CA: 123456789abcdefghijklmnopqrstuvwxyz"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1616024408]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=426394512]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "START"
+
+[node name="ConnectButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=186568]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Connect Wallet"
+
+[node name="WalletAdapter" type="WalletAdapter" parent="." unique_id=553034804]
+
+[node name="WalletAdapterButton" type="Node" parent="." unique_id=409684720]
+script = ExtResource("6_a5yrp")
+metadata/_custom_type_script = "uid://dyuh6xurvfk7q"
+
+[node name="ConnectButton" type="Button" parent="." unique_id=254209802]
+offset_left = -227.0
+offset_top = 173.0
+offset_right = -102.0
+offset_bottom = 204.0
+
+[node name="StatusLabel" type="Label" parent="." unique_id=1752987746]
+offset_left = -132.0
+offset_top = 24.0
+offset_right = -41.0
+offset_bottom = 47.0
+text = "StatusLabel"
+
+[node name="WalletAddressLabel" type="Label" parent="." unique_id=1899182251]
+offset_left = -58.0
+offset_top = 3.0
+offset_right = -18.0
+offset_bottom = 26.0
+text = "\"\""
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ConnectButton" to="." method="_on_connect_wallet_pressed"]

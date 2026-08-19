@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://gdmlygpmrf8s"]
+
+[ext_resource type="Script" uid="uid://btjs75vjnhgnn" path="res://scenes/components/player_indicator.gd" id="1_dnthj"]
+[ext_resource type="Texture2D" uid="uid://qxi3yebf3xn7" path="res://scenes/ui/ui_sprites.png" id="1_fack1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrndj"]
+atlas = ExtResource("1_fack1")
+region = Rect2(176, 144, 32, 32)
+
+[node name="PlayerIndicator" type="Node2D" unique_id=634508788]
+script = ExtResource("1_dnthj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=521950659]
+texture = SubResource("AtlasTexture_wrndj")

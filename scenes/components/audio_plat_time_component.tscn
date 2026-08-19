@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cdn2og1s7jjdp"]
+
+[ext_resource type="Script" uid="uid://buhha00ksixlv" path="res://scenes/components/audio_plat_time_component.gd" id="1_qgel1"]
+
+[node name="AudioPlatTimeComponent" type="Timer" unique_id=865581244]
+script = ExtResource("1_qgel1")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

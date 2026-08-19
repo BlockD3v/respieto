@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://idy0jmqnbyo6"]
+
+[ext_resource type="PackedScene" uid="uid://bmw1ahykfcltt" path="res://mouse_cursor_component.tscn" id="1_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://dp422rxsxbn5t" path="res://audio/music/on_the_farm_music.tscn" id="1_pu3yx"]
+[ext_resource type="Texture2D" uid="uid://801f0wa08qgb" path="res://scenes/ui/mouse.png" id="2_gubc5"]
+[ext_resource type="PackedScene" uid="uid://r7yg70yc4f6g" path="res://scenes/lvl/lvl_1.tscn" id="2_pu3yx"]
+
+[node name="MainScene" type="Node" unique_id=2146281650]
+
+[node name="OnTheFarmMusic" parent="." unique_id=1794578402 instance=ExtResource("1_pu3yx")]
+volume_db = -14.677
+max_distance = 60000.0
+bus = &"Master"
+
+[node name="MouseCursorComponent" parent="." unique_id=1220619927 instance=ExtResource("1_7ykc4")]
+cursor_component_texture = ExtResource("2_gubc5")
+
+[node name="LevelMain" type="Node2D" parent="." unique_id=989446540]
+
+[node name="Lvl1" parent="LevelMain" unique_id=785842795 instance=ExtResource("2_pu3yx")]

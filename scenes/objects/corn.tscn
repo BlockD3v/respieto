@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d1qfumfvv8dn"]
+
+[ext_resource type="Texture2D" uid="uid://05ihwrmv04ks" path="res://scenes/ui/object_sprites.png" id="1_lfpcd"]
+[ext_resource type="PackedScene" uid="uid://dmtjmvxba1xfr" path="res://scenes/components/collectable_component.tscn" id="2_e2uku"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_70dkv"]
+radius = 8.0
+
+[node name="CornHarvest" type="Sprite2D" unique_id=721697908]
+texture = ExtResource("1_lfpcd")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="CollectableComponent" parent="." unique_id=636082491 instance=ExtResource("2_e2uku")]
+collectable_name = "CornHarvest"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent" unique_id=95475435]
+y_sort_enabled = true
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_70dkv")

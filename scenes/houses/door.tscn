@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://ckti06p6j8whp"]
+
+[ext_resource type="Script" uid="uid://djn8u8ytjbnsy" path="res://scenes/houses/door.gd" id="1_act2a"]
+[ext_resource type="Texture2D" uid="uid://ctdlkiqcqis32" path="res://assets/game/tilesett/Building parts/door animation sprites.png" id="1_bxi54"]
+[ext_resource type="PackedScene" uid="uid://wei3m1ay4vfl" path="res://scenes/components/InteractableComponent.tscn" id="3_1ugum"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dpp7"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(0, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_act2a"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(48, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ugum"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(96, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nno8d"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(144, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wapg7"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(192, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g7dj"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(240, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4ind"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(240, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uimo"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(240, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_557ok"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(192, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb53x"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(144, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fll04"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(96, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgt75"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(48, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3122"]
+atlas = ExtResource("1_bxi54")
+region = Rect2(0, 16, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wrndj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dpp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_act2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ugum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nno8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wapg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g7dj")
+}],
+"loop": 0,
+"name": &"close_door",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4ind")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uimo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_557ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb53x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fll04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgt75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3122")
+}],
+"loop": 0,
+"name": &"open_door",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrndj"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70dkv"]
+size = Vector2(20, 42)
+
+[node name="Door" type="StaticBody2D" unique_id=2067237391]
+script = ExtResource("1_act2a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=42519168]
+sprite_frames = SubResource("SpriteFrames_wrndj")
+animation = &"close_door"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2034420535]
+shape = SubResource("RectangleShape2D_wrndj")
+
+[node name="InteractableComponent" parent="." unique_id=1436372580 instance=ExtResource("3_1ugum")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=927940927]
+shape = SubResource("RectangleShape2D_70dkv")
+debug_color = Color(0, 0.6477155, 0.21189952, 0.41960785)
