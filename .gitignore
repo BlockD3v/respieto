@@ -1,13 +1,13 @@
 # Godot exported files
 export_build/
 export_presets.cfg
-*.pck
-*.wasm
-*.js
-*.html
-*.worklet.js
-*.png
-*.apple-touch-icon.png
+#*.pck
+#*.wasm
+#*.js
+#*.html
+#*.worklet.js
+#*.png
+#*.apple-touch-icon.png
 
 # Godot specific
 *.import
@@ -38,4 +38,4 @@ Desktop.ini
 *.zip
 
 # Addons (if not needed in repo)
-# addons/   # uncomment if you don't want addons in repo
+# addons/   # uncomment if you don't want addons in rep

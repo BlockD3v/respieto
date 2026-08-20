@@ -13,6 +13,12 @@ var wallet_address: String = ""
 
 func _ready():
 	if wallet_adapter:
+		# 🔥 FORCE WEB ENVIRONMENT
+		if wallet_adapter.has_method("set_environment"):
+			wallet_adapter.set_environment("web")
+		if wallet_adapter.has_method("set_network"):
+			wallet_adapter.set_network("devnet")
+		
 		if wallet_adapter.has_signal("wallet_connected"):
 			wallet_adapter.wallet_connected.connect(_on_wallet_connected)
 		if wallet_adapter.has_signal("wallet_disconnected"):
@@ -25,7 +31,6 @@ func _ready():
 		timer.timeout.connect(_poll_connection)
 		add_child(timer)
 		timer.start()
-
 func _poll_connection():
 	if not wallet_adapter:
 		return
